@@ -1,6 +1,6 @@
 {
-    "name" : "anax/noname",
-    "description": "A me page for the ramverk1 course.",
+    "name" : "anax/project",
+    "description": "A page about the gold coast.",
     "license": "MIT",
     "minimum-stability": "beta",
     "prefer-stable": true,
@@ -11,6 +11,7 @@
         }
     },
     "require": {
+        "php": "^7.2",
         "anax/anax-ramverk1-me": "^1.0.0",
         "anax/htmlform": "^2.0",
         "anax/database-active-record": "^2.0"
