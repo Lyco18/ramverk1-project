@@ -1,0 +1,21 @@
+{
+    "name" : "anax/noname",
+    "description": "A me page for the ramverk1 course.",
+    "license": "MIT",
+    "minimum-stability": "beta",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Anax\\": "src/",
+            "Lyco\\": "src/"
+        }
+    },
+    "require": {
+        "anax/anax-ramverk1-me": "^1.0.0",
+        "anax/htmlform": "^2.0",
+        "anax/database-active-record": "^2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7"
+    }
+}
