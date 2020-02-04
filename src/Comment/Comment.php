@@ -28,4 +28,16 @@ class Comment extends ActiveRecordModel
     public $replyId;
     public $id;
     public $text;
+
+    public function findAllCommentsWhere($where, $value)
+    {
+        $this->checkDb();
+        $params = is_array($value) ? $value : [$value];
+        return $this->db->connect()
+                        ->select()
+                        ->from($this->tableName)
+                        ->where($where . " = ?")
+                        ->execute($params)
+                        ->fetchAllClass(get_class($this));
+    }
 }

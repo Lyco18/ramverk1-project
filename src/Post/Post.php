@@ -25,4 +25,17 @@ class Post extends ActiveRecordModel
     public $acronym;
     public $title;
     public $text;
+
+
+    public function findLatest()
+    {
+        $this->checkDb();
+        return $this->db->connect()
+                        ->select()
+                        ->from($this->tableName)
+                        ->orderBy("post.postId DESC")
+                        ->limit("2")
+                        ->execute()
+                        ->fetchAllClass(get_class($this));
+    }
 }

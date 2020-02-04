@@ -27,6 +27,12 @@ endif;
 // var_dump($tags);
 ?>
 <h3>tags:</h3>
-<?php foreach ($tags as $tag) : ?>
-    <p><a href="<?= url("tag/view/{$tag->tag}"); ?>" ><?= $tag->tag ?></a></p>
+<?php foreach ($tags as $tag) :
+    $array[] = $tag->tag;
+endforeach;
+$tagArray = array_unique($array);
+
+foreach ($tagArray as $tag) : ?>
+    <a href="<?= url("tag/view/{$tag}"); ?>" class="button"><?= $tag ?></a>
+
 <?php endforeach; ?>

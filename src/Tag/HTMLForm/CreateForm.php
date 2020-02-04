@@ -10,6 +10,7 @@ use Lyco\Tag\Tag;
  */
 class CreateForm extends FormModel
 {
+    public $postId;
     /**
      * Constructor injects with DI container.
      *
@@ -37,26 +38,20 @@ class CreateForm extends FormModel
         );
     }
 
-
-
     /**
      * Callback for submit-button which should return true if it could
      * carry out its work and false if something failed.
      *
      * @return bool true if okey, false if something went wrong.
      */
-    public function callbackSubmit($postId) : bool
+    public function callbackSubmit() : bool
     {
         $tag = new Tag();
         $tag->setDb($this->di->get("dbqb"));
-        $tagArray = $tag->findAll();
-        if (!in_array($this->form->value("tag"), $tagArray)) {
-            $tag->tag = $this->form->value("tag");
-            $tag->postId = $this->postId;
-            $tag->save();
-            return true;
-        }
-        return false;
+        $tag->tag = $this->form->value("tag");
+        $tag->postId = $this->postId;
+        $tag->save();
+        return true;
     }
 
     /**
@@ -66,12 +61,12 @@ class CreateForm extends FormModel
      */
     public function callbackSuccess()
     {
-        $this->di->get("response")->redirect("post/view/ . $this->postId")->send();
+        $this->di->get("response")->redirect("post/view/" . $this->postId)->send();
     }
 
     /**
      * Callback what to do if the form was unsuccessfully submitted, this
-     * happen when the submit callback method returns true.
+     * happen when the submit callback method returns false.
      */
     public function callbackFail()
     {

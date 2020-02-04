@@ -8,6 +8,7 @@ use Lyco\Comment\HTMLForm\CreateForm;
 use Lyco\Comment\HTMLForm\UpdateForm;
 use Lyco\Post\Post;
 use Lyco\User\User;
+use Lyco\Tag\Tag;
 use \Michelf\MarkdownExtra;
 
 
@@ -50,11 +51,17 @@ class CommentController implements ContainerInjectableInterface
          $comment = new Comment();
          $comment->setDb($this->di->get("dbqb"));
 
+         // tags
+         $tag = new Tag();
+         $tag->setDb($this->di->get("dbqb"));
+         $tags = $tag->findAllTagsWhere("post.postId", $id);
+
 
          $data = [
-             "comments" => $comment->find("postId", $id),
+             "comments" => $comment->findAllCommentsWhere("postId", $id),
              "post" => $post->find("postId", $id),
              "userId" => $userId,
+             "tags" => $tags,
              "filter" => new MarkdownExtra()
          ];
 

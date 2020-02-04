@@ -108,12 +108,12 @@ class PostController implements ContainerInjectableInterface
          // tags
          $tag = new Tag();
          $tag->setDb($this->di->get("dbqb"));
-         $tags = $tag->find("postId", $id);
+         $tags = $tag->findAllTagsWhere("post.postId", $id);
 
          // comments
          $comment = new Comment();
          $comment->setDb($this->di->get("dbqb"));
-         $comments = $comment->find("postId", $id);
+         $comments = $comment->findAllCommentsWhere("postId", $id);
 
          $data = [
              "post" => $posts,

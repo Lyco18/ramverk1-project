@@ -18,7 +18,7 @@ return [
             "htmlClass" => null,
             "lang" => "sv",
             "stylesheets" => [
-                "css/dbwebb-se.min.css",
+                "css/dbwebb-se_v2.css",
             ],
             "javascripts" => [
                 "js/responsive-menu.js",
@@ -33,8 +33,8 @@ return [
             "template" => "anax/v2/header/site_logo",
             "data" => [
                 "class" => "large",
-                "siteLogo"      => "image/theme/leaf_256x256.png",
-                "siteLogoAlt"   => "Löv",
+                "siteLogo"      => "image/theme/android-chrome-192x192.png",
+                "siteLogoAlt"   => "Sun",
             ],
         ],
         [
@@ -42,9 +42,9 @@ return [
             "template" => "anax/v2/header/site_logo_text",
             "data" => [
                 "homeLink"      => "",
-                "siteLogoText"  => "Gold Coast",
-                "siteLogoTextIcon" => "image/theme/leaf_40x40.png",
-                "siteLogoTextIconAlt" => "Löv-bild",
+                "siteLogoText"  => "",
+                "siteLogoTextIcon" => "image/theme/favicon-32x32.png",
+                "siteLogoTextIconAlt" => "sun",
             ],
         ],
         [

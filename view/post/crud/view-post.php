@@ -42,7 +42,8 @@ endif;
     </tr>
 </table>
 <p>
-    <a href="<?= url("tag/create/{$post->postId}") ?>">Create or add tag</a>
+    <a href="<?= url("tag/create/{$post->postId}") ?>" class="button">Create or add tag</a>
+    <a href="<?= url("comment/create/{$post->postId}"); ?>" class="comment button">Comment</a>
 </p>
 <h3>Comments:</h3>
 <?php if (!$comments) : ?>
@@ -51,23 +52,25 @@ endif;
     return;
 endif;
 ?>
-<p>
-    <?= $comments->text ?><br>
-    By: <?= $comments->id ?><br>
-</p>
+<?php foreach ($comments as $comment) : ?>
+        <?=$comment->id . ": " . $comment->text ?><br><br>
+        <?php if ($userId == $comment->id) : ?>
+        <a href="<?= url("comment/update/{$comment->commentId}"); ?>" class="button">Edit your comment</a>
+    <?php endif; ?>
+<?php endforeach; ?>
+
 <h3>Tags:</h3>
 <?php if ($tags == null) : ?>
     <p>There are no tags to show.</p>
 <?php
     return;
 endif;
-?>
-<p>
-    <?= $tags->tag ?>
-</p>
-
-<?php if ($userId == $comments->id) : ?>
-    <a href="<?= url("comment/update/{$comments->commentId}"); ?>" class="button">Edit</a>
-<?php endif; ?>
-<br>
-<a href="<?= url("post") ?>">Show all posts</a>
+foreach ($tags as $tag) :
+    $array[] = $tag->tag;
+endforeach;
+$tagArray = array_unique($array);
+foreach ($tagArray as $tags) : ?>
+    <a href="<?= url("tag/view/{$tags}"); ?>" class="button"><?= $tags ?></a>
+<?php endforeach; ?>
+<br><br>
+<a href="<?= url("post") ?>" class="button">Show all posts</a>
