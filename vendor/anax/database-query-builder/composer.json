@@ -1,0 +1,29 @@
+{
+    "name": "anax/database-query-builder",
+    "type": "library",
+    "description": "Anax Database Query Builder module, create queries through methods.",
+    "keywords": ["database", "query builder", "DBA"],
+    "homepage": "https://dbwebb.se/anax",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mikael Roos",
+            "email": "mos@dbwebb.se"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/canax/database-query-builder/issues"
+    },
+    "autoload": {
+        "psr-4": { 
+            "Anax\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.2",
+        "anax/database": "^2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7"
+    }
+}
