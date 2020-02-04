@@ -1,4 +1,8 @@
 [![Build Status](https://travis-ci.com/Lyco18/ramverk1-project.svg?branch=master)](https://travis-ci.com/Lyco18/ramverk1-project)
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/Lyco18/ramverk1-project/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
+[![Code Coverage](https://scrutinizer-ci.com/g/Lyco18/ramverk1-project/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/Lyco18/ramverk1-project/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Lyco18/ramverk1-project/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Lyco18/ramverk1-project/?branch=master)
+
 
 Ramverk1 Final project
 =========================
