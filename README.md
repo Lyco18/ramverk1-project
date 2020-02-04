@@ -11,11 +11,13 @@ Following is a final project for the course ramverk1.
 A forum about the Gold Coast!
 
 To re-use this, download from github and use composer install:
-```git clone
+```
+https://github.com/Lyco18/ramverk1-project.git
 ```
 
 Run following commands:
-```$ mkdir data
+```
+$ mkdir data
 $ chmod 777 data
 $ touch data/db.sqlite
 $ chmod 666 data/db.sqlite
